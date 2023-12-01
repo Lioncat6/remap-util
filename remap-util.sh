@@ -10,3 +10,6 @@
 # https://github.com/Lioncat6
 #
 #######################
+
+echo -e "This should be finished in a couple days (12/1/23)" 
+sleep 5
