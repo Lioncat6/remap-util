@@ -84,13 +84,14 @@ On_ICyan='\033[0;106m'    # Cyan
 On_IWhite='\033[0;107m'   # White
 
 cls
-echo -e "ChromeOS Keyboard Remapping Utility ${IGreen}${Remap_util_date}${Color_Off}" 
+echo -e "ChromeOS Keyboard Remapping Utility ${IGreen}${Remap_util_date}${Color_Off} by Lioncat6"
 sleep 1
 #echo -e "${BIWhite}Press ${BIPurple}Enter${BIWhite} to begin${Color_Off}"
 #read -re 
 
 function menu(){
     cls
+    echo -e "For support please see ${IWhite}https://github.com/Lioncat6/remap-util${Color_Off}"
     echo -e ${BIYellow}"1) ${IWhite} - ${ICyan}Remap keys${Color_Off}"
     echo -e ${BIYellow}"2) ${IWhite} - ${ICyan}Restore original keybinds${Color_Off}"
     echo -e ""
