@@ -131,12 +131,15 @@ function topRow(){
     sudo cp pc /usr/share/X11/xkb/symbols/
     echo -e "Does your device have a lock key? [Y,N]"
     read -re response
-    if ["${response}" == "Y"]
-    then 
+    case "$response" in 
+        Y) 
         lockKey
-    else
+        ;;
+        *)
         promptRestart
-    fi
+        ;;
+    esac
+    
     
 }
 
@@ -155,6 +158,7 @@ function restoreBackup(){
         else 
             echo -e "Backup file at /usr/share/X11/xkb/symbols/inet does not exist... skipping"
     fi
+    promptRestart
 }   
 
 function lockKey(){
@@ -165,8 +169,12 @@ function lockKey(){
     promptRestart
 }
 
+
 function promptRestart(){
-    echo -e "Need to restart"
+    echo -e "${BIRed}The device needs to restart to apply these changes${Color_Off}"
+    echo -e "${BIWhite}Press ${BIPurple}Enter${BIWhite} to restart${Color_Off}"
+    read -re
+    sudo reboot
 }
 
 menu
